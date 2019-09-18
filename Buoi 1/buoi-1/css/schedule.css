@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.tkb {
+    border: solid 1px;
+    border-top-color: grey;
+    border-left-color: grey;
+    text-align: center;
+    margin: 0 auto;
+}
+
+th {
+    width: 150px;
+    height: 30px;
+    border: solid 1px;
+    border-right-color: grey;
+    border-bottom-color: grey;
+}
+
+td {
+    width: 150px;
+    height: 30px;
+    border: solid 1px;
+    border-right-color: grey;
+    border-bottom-color: grey;
+}
+
+h1 {
+    padding: 30px
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+
+.footer {
+    text-align: center;
+}

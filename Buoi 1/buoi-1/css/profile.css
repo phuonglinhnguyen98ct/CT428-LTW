@@ -1,0 +1,317 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+    margin: 0px;
+    background: #e4e4ec;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #ddd;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+    border: solid 1px grey;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+}
+
+.container {
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: blue;
+}
+
+.nav-container {
+    border-bottom: solid 1px grey;
+    transition: 0.2s;
+    position: fixed;
+    top: 0;
+}
+
+.nav-container ul {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container a {
+    display: block;
+    padding: 20px;
+    font-size: 1.7em;
+    width: 200px;
+    text-align: center;
+    color: black;
+}
+
+.nav-container a:hover {
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border-bottom: solid 3px white;
+    background-color: grey;
+}
+
+.cats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+
+.title {
+    padding-left: 20px;
+}
+
+.cat-img {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cat-img img {
+    width: 350px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .cats-container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .cats-container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+}
+
+.right-align {
+    text-align: right;
+}
+
+.icon {
+    height: 50px;
+}
+
+#scroll-top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+    font-size: 3em;
+    color: grey;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+    border: solid;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+#scroll-top-btn:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.nav-container-sub {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.nav-container-sub a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 40px;
+    color: black;
+    background-color: #fff;
+}
+
+.nav-container-sub li ul {
+    display: none;
+}
+
+.nav-container-sub a:hover {
+    color: white;
+    background-color: #333333;
+}
+
+.nav-container-sub i {
+    cursor: pointer;
+    font-size: 2em;
+    text-align: right;
+}
+
+.menu {
+    text-align: right;
+}
+
+.menu i:hover {
+    font-weight: bold;
+}
+
+.nav-container-sub li:hover>ul {
+    display: block;
+}
+
+@media only screen and (max-width: 900px) {
+    .nav-container-sub {
+        display: block;
+    }
+    .nav-container {
+        display: none;
+    }
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    margin: 20px;
+}
+
+.avatar {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-icon {
+    width: 30px;
+}
+
+.about-name {
+    text-align: center;
+    color: #1974bb;
+}
+
+.center-align {
+    text-align: center;
+}
+
+table {
+    margin: 20px 0;
+}
+
+td {
+    padding: 0px 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .about-container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+}
+
+.skill-table {
+    margin: 0 auto;
+}
+
+.studied-bar {
+    width: 300px;
+}
+
+.studied-color {
+    background-color: #63b7f8;
+    margin: 10px 0;
+    height: 15px;
+    border-radius: 10px 0 0 10px;
+}
+
+.unstudied-color {
+    background-color: #ffffff;
+    margin: 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.grid-col-7-3 {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+}
+
+.grid-col-6-4 {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+}
+
+.grid-col-8-2 {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
+
+.grid-col-5-5 {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+}
+
+.footer {
+    text-align: center;
+    line-height: 25px;
+    padding: 10px;
+}
+
+.exercise-container {
+    padding-left: 100px;
+}
+
+.bg-container {
+    background-size: cover;
+    height: 100vh;
+    animation: bg-cat 20s infinite;
+}
+
+@keyframes bg-cat {
+    0%, 100% {
+        background-image: url('../img/white-cat.jpg');
+    }
+    25% {
+        background-image: url('../img/cat-hang-rao.jpg');
+    }
+    50% {
+        background-image: url('../img/cat-tuyet.jpg');
+    }
+    75% {
+        background-image: url('../img/cat-hungry.jpg');
+    }
+}
+
+a[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"] {
+    display: none;
+}
+

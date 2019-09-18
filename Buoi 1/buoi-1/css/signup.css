@@ -1,0 +1,74 @@
+body {
+    font-size: 16px;
+}
+
+.form-title {
+    color: red;
+    text-align: center;
+    margin: 20px;
+    font-size: 1.5em;
+}
+
+.form-note {
+    text-align: center;
+    margin: 20px;
+}
+
+.signup-form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px #a7a7a7;
+}
+
+.signup-form {
+    border: solid 1px;
+    padding: 40px;
+    background-color: #d3d3d3;
+}
+
+.div-column-4-6 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 10px;
+}
+
+.div-column-5-5 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+input[type="text"], input[type="password"] {
+    height: 1.2em;
+    padding: 0.2em;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    transform: scale(1.5);
+}
+
+.middle-div {
+    margin: 0 auto;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+#job {
+    width: 100px;
+    height: 25px;
+}
+
+#signup-btn {
+    width: 100px;
+    height: 30px;
+}
+
+#reset-btn {
+    width: 100px;
+    height: 30px;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 30px;
+}
