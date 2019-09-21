@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .tkb {
@@ -9,6 +10,7 @@
     border-left-color: grey;
     text-align: center;
     margin: 0 auto;
+    border-collapse: collapse;
 }
 
 th {
@@ -17,6 +19,7 @@ th {
     border: solid 1px;
     border-right-color: grey;
     border-bottom-color: grey;
+    background-color: #95e1d3;
 }
 
 td {
@@ -25,6 +28,15 @@ td {
     border: solid 1px;
     border-right-color: grey;
     border-bottom-color: grey;
+    background-color: #e4f8cc;
+}
+
+td:hover {
+    background-color: #f38181;
+}
+
+.data {
+    background-color: #fce38a;
 }
 
 h1 {

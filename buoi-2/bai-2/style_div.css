@@ -4,9 +4,23 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #333333;
+    height: 99vh;
+}
+
+#wrap {
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+}
+
 #title {
     background-image: url("./header.jpg");
-    height: 45vh;
+    height: 35vh;
     background-size: 100% 100%;
 }
 
@@ -20,11 +34,13 @@
     height: 50vh;
     width: 30%;
     float: left;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 ul {
     list-style-type: none;
+    background-color: #add9e4;
+    padding: 2px;
 }
 
 #menu h4 {
@@ -36,14 +52,15 @@ ul {
 }
 
 #menu a {
+    width: 95%;
     color: #0000fe;
-    background-color: #add9e4;
     height: 30px;
     line-height: 30px;
     padding-left: 10px;
     display: block;
     text-decoration: none;
     border-bottom: solid 1px white;
+    margin: auto;
 }
 
 #menu a:hover {
@@ -69,9 +86,11 @@ ul {
 }
 
 #footer {
-    clear: both;
-    height: 5vh;
-    text-align: center;
-    line-height: 5vh;
+    position: absolute;
     border-top: solid 1px grey;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 98%;
+    text-align: center;
 }
