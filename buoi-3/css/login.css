@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: red;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: fit-content;
+    border: solid 1px gray;
+    background-color: #e4e4ec;
+    padding: 50px 100px;
+}
+
+.usrn-passw {
+    padding: 10px 0;
+}
+
+.usrn-passw input {
+    height: 20px;
+    width: 100%;
+}
+
+.login-btn-container {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.login-btn-container input {
+    padding: 10px;
+    margin: 10px;
+}

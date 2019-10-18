@@ -13,40 +13,40 @@
     <h3 class="form-title">Đăng ký tài khoản mới</h3>
     <div class="form-note">Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản mới</div>
     <div class="signup-form-container">
-        <form action="" method="POST" enctype="multipart/form-data" class="signup-form">
+        <form action="./php/signup.php" method="POST" class="signup-form" enctype="multipart/form-data">
             <div class="div-column-4-6">
                 <label for="username">Tên đăng nhập</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
             </div>
             <div class="div-column-4-6">
                 <label for="password">Mật khẩu</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
             </div>
             <div class="div-column-4-6">
                 <label for="repassword">Gõ lại mật khẩu</label>
-                <input type="password" name="repassword" id="re-password">
+                <input type="password" name="repassword" id="re-password" required>
             </div>
             <div class="div-column-4-6">
                 <label for="password">Hình đại diện</label>
-                <input type="file" name="avatar" id="avatar" accept="image/gif, image/x-png, image/jpeg">
+                <input type="file" name="avatar" id="avatar" accept="image/gif, image/x-png, image/jpeg" required>
             </div>
             <div class="div-column-4-6">
                 <div>
                     <label for="">Giới tính</label>
                 </div>
                 <div>
-                    <input type="radio" name="gender" value="male" checked>Nam
-                    <input type="radio" name="gender" value="female">Nữ
-                    <input type="radio" name="gender" value="other">Khác
+                    <input type="radio" name="gender" value="nam" checked>Nam
+                    <input type="radio" name="gender" value="nữ">Nữ
+                    <input type="radio" name="gender" value="khác">Khác
                 </div>
             </div>
             <div class="div-column-4-6">
                 <label for="job">Nghề nghiệp</label>
                 <select name="job" id="job">
-                    <option value="youngStudent">Học sinh</option>
-                    <option value="oldStudent">Sinh viên</option>
-                    <option value="teacher">Giáo viên</option>
-                    <option value="other">Khác</option>
+                    <option value="học sinh">Học sinh</option>
+                    <option value="sinh viên">Sinh viên</option>
+                    <option value="giáo viên">Giáo viên</option>
+                    <option value="khác">Khác</option>
                 </select>
             </div>
             <div class="div-column-4-6">
@@ -56,18 +56,18 @@
                 <div>
                     <div class="div-column-5-5">
                         <div>
-                            <input type="checkbox" name="hobby" value="sport">Thể thao
+                            <input type="checkbox" name="hobby[]" value="thể thao">Thể thao
                         </div>
                         <div>
-                            <input type="checkbox" name="hobby" value="travel">Du lịch
+                            <input type="checkbox" name="hobby[]" value="du lịch">Du lịch
                         </div>
                     </div>
                     <div class="div-column-5-5">
                         <div>
-                            <input type="checkbox" name="hobby" value="music">Âm nhạc
+                            <input type="checkbox" name="hobby[]" value="âm nhạc">Âm nhạc
                         </div>
                         <div>
-                            <input type="checkbox" name="hobby" value="fashion">Thời trang
+                            <input type="checkbox" name="hobby[]" value="thời trang">Thời trang
                         </div>
                     </div>
                 </div>

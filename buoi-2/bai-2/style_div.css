@@ -10,7 +10,7 @@ body {
 }
 
 #wrap {
-    width: 85%;
+    width: 80%;
     height: 100%;
     margin: auto;
     background-color: #fff;
@@ -20,8 +20,9 @@ body {
 
 #title {
     background-image: url("./header.jpg");
-    height: 35vh;
-    background-size: 100% 100%;
+    height: 38vh;
+    background-size: cover;
+    background-position: center;
 }
 
 #title h1 {
