@@ -53,15 +53,16 @@
     }
 
     if ($check) {
-        $sql = 'INSERT INTO thanhvien(tendangnhap, matkhau, hinhanh, gioitinh, nghenghiep, sothich) VALUES ("' . $username . '", "' . $password_encypt . '", "' . $path . '", "' . $gender . '", "' . $job . '", "' . $hobby_str . '")';
-        $con->query($sql);
+        $sql = 'INSERT INTO thanhvien(tendangnhap, matkhau, hinhanh, gioitinh, nghenghiep, sothich) VALUES (?, ?, ?, ?, ?, ?)';
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param('ssssss', $username, $password_encypt, $path, $gender, $job, $hobby_str);
+        $stmt->execute();
+    
         $message = "Đăng ký thành công";
         echo "<script type='text/javascript'>
             alert('$message');
             window.location.href='../login.html';
         </script>";
-        
-        // header('Location: ' . '../login.html');
     }
     else {
         header('Location:' . '../signup.html');
