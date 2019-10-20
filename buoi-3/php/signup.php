@@ -32,8 +32,14 @@
     }
 
     // Check username existed
-    $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = "' . $username . '";';
-    $result = $con->query($sql);
+    $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = ?';
+    
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $check = false;
     }
@@ -55,5 +61,6 @@
         header('Location:' . '../signup.html');
     }
 
+    $stmt->close();
     $con->close();
 ?>

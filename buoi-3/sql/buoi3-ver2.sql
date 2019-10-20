@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2019 at 05:17 PM
+-- Generation Time: Oct 18, 2019 at 04:44 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -70,7 +70,6 @@ CREATE TABLE `thanhvien` (
 
 INSERT INTO `thanhvien` (`id`, `tendangnhap`, `matkhau`, `hinhanh`, `gioitinh`, `nghenghiep`, `sothich`) VALUES
 (1, 'phuonglinh1', 'e10adc3949ba59abbe56e057f20f883e', '../upload/dlat-coffee-after-01-min.jpeg', 'nam', 'sinh viên', 'thể thao, du lịch, âm nhạc'),
-(2, '', 'd41d8cd98f00b204e9800998ecf8427e', '../upload/', '', '', ''),
 (3, 'phuonglinh2', 'e10adc3949ba59abbe56e057f20f883e', '../upload/meo-paint.jpg', 'nam', 'sinh viên', 'thể thao, du lịch, âm nhạc');
 
 --

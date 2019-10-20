@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])) {
                 <a href="./danhsachsanpham.php">Danh sách sản phẩm</a> |
                 <a href="./themsanpham.php">Thêm sản phẩm</a>
             </div>
-            <h3>Chào bạn <?php echo $username ?>!</h3>
+            <h3>Chào bạn <?php echo $username ?> !</h3>
             <div class="product-info">
                 <div>Danh sách sản phẩm của bạn là:</div>
                 <table>
@@ -38,9 +38,12 @@ if (isset($_SESSION['username'])) {
                     </tr>
                     <?php
                     require './connect-db.php';
-                    $sql = 'SELECT * FROM sanpham as sp JOIN thanhvien as tv ON sp.idtv = tv.id WHERE tendangnhap = "' . $username . '"';
-                    // echo $sql;
-                    $result = $con->query($sql);
+                    $sql = 'SELECT * FROM sanpham as sp JOIN thanhvien as tv ON sp.idtv = tv.id WHERE tendangnhap = ?';
+                    $stmt = $con->prepare($sql);
+                    $stmt->bind_param('s', $username);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
                     $i = 1;
                     while ($row = $result->fetch_assoc()) {
                         ?>
@@ -55,6 +58,8 @@ if (isset($_SESSION['username'])) {
                     <?php
                         $i++;
                     }
+
+                    $stmt->close();
                     $con->close();
                     ?>
                 </table>

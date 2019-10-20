@@ -21,12 +21,20 @@ if (isset($_SESSION['username'])) {
 <body>
     <?php
     require './connect-db.php';
-    $sql = 'SELECT * FROM sanpham WHERE idsp = ' . $_GET['idsp'];
-    $result = $con->query($sql);
+    $idsp = $_GET['idsp'];
+    $sql = 'SELECT * FROM sanpham WHERE idsp = ?';
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param('i', $idsp);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
     }
 
+    $stmt->close();
+    $con->close();
     ?>
     <div class="wrapper">
         <div class="container">

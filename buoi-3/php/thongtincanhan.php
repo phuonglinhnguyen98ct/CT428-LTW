@@ -33,16 +33,16 @@ if (isset($_SESSION['username'])) {
             <div>
                 <?php
                 require 'connect-db.php';
-                $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = "' . $username . '";';
-                // echo $query;
 
-                $result = $con->query($sql);
+                $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = ?';
 
-                $gender = '';
-                $job = '';
-                $hobby = '';
+                $stmt = $con->prepare($sql);
+                $stmt->bind_param('s', $username);
+                $stmt->execute();
 
-                if ($result->num_rows == 1) {
+                $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
                     $row = $result->fetch_assoc();
                     $avatar_path = $row['hinhanh'];
                     $gender = $row['gioitinh'];
@@ -50,6 +50,7 @@ if (isset($_SESSION['username'])) {
                     $hobby = $row['sothich'];
                 }
 
+                $stmt->close();
                 $con->close();
                 ?>
 

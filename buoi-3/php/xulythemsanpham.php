@@ -14,20 +14,29 @@
     $hinhsp = $_FILES['hinhsp'];
 
     // Get user's ID
-    $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = "' . $username . '"';
-    $result = $con->query($sql);
+    $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = ?';
+
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $userid = $row['id'];
+        $idtv = $row['id'];
     }
 
     if ($hinhsp) {
         $path = '../sanpham/' . $hinhsp['name'];
         move_uploaded_file($hinhsp['tmp_name'], $path);
     }
-    $sql = 'INSERT INTO sanpham(tensp, chitietsp, giasp, hinhanhsp, idtv) VALUES("' . $tensp . '" , "' . $chitietsp . '", "' . $giasp . '", "' . $path . '", "' . $userid . '")';
-    $con->query($sql);
+    $sql = 'INSERT INTO sanpham(tensp, chitietsp, giasp, hinhanhsp, idtv) VALUES(?, ?, ?, ?, ?)';
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param('ssisi', $tensp, $chitietsp, $giasp, $path, $idtv);
+    $stmt->execute();
 
+    $stmt->close();
     $con->close();
     header('Location: ' . './danhsachsanpham.php');
 ?>
