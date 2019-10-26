@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bai2.css">
+    <title>Image Rollovers</title>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="./img/hp.jpg" alt="hp-computer">
+        </div>
+        <div class="image-container">
+            <img src="./img/dell.jpg" alt="hp-computer">
+        </div>
+        <div class="image-container">
+            <img src="./img/acer.jpg" alt="hp-computer">
+        </div>
+        <div class="image-container">
+            <img src="./img/asus.jpg" alt="hp-computer">
+        </div>
+        <div>
+            <input type="button" value="Previous" onclick="previousSlide()">
+            <input type="button" value="Next" onclick="nextSlide()">
+        </div>
+        <div>
+            <select name="productList" id="product-list">
+                <option value="HP">HP</option>
+                <option value="Dell">Dell</option>
+                <option value="Acer">Acer</option>
+                <option value="Asus">Asus</option>
+            </select>
+        </div>
+    </div>
+    
+    <script>
+        let productList = document.getElementById('product-list');
+        let currentSlideIndex = 0;
+        showSlide(0);
+
+        function previousSlide() {
+            showSlide(currentSlideIndex-1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlideIndex+1);
+        }
+
+        /* 
+        Show the slide n
+        n begin from 0
+        */ 
+        function showSlide(n) {
+            let images = document.getElementsByClassName("image-container");
+            currentSlideIndex = n;
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = images.length-1;
+            }
+            if (currentSlideIndex === images.length) {
+                currentSlideIndex = 0;
+            }
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+            images[currentSlideIndex].style.display = 'block';
+
+            // Change selected option
+            productList.selectedIndex = currentSlideIndex;
+        }
+
+        productList.onchange = () => {
+            showSlide(productList.selectedIndex);
+        }
+    </script>
+</body>
+</html>

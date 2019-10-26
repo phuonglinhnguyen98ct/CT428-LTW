@@ -21,7 +21,7 @@ body {
     border: solid 1px #a7a7a7;
 }
 
-.signup-form {
+#signup-form {
     border: solid 1px;
     padding: 40px;
     background-color: #d3d3d3;

@@ -24,7 +24,8 @@ if (isset($_SESSION['username'])) {
             <div class="menu-container">
                 <a href="./thongtincanhan.php">Thông tin cá nhân</a> |
                 <a href="./danhsachsanpham.php">Danh sách sản phẩm</a> |
-                <a href="./themsanpham.php">Thêm sản phẩm</a>
+                <a href="./themsanpham.php">Thêm sản phẩm</a> |
+                <a href="../../buoi-4/php/bai4.php">Bài 2 (Buổi 4)</a>
             </div>
             <h3>Chào bạn <?php echo $username ?> !</h3>
             <div class="product-info">

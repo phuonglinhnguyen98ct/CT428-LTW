@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bai2.css">
+    <title>Image Rollovers - Timer</title>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <a href="https://www8.hp.com" target="_blank">
+                <img src="./img/hp.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="https://www.dell.com" target="_blank">
+                <img src="./img/dell.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>            
+        </div>
+        <div class="image-container">
+            <a href="https://www.acer.com" target="_blank">
+                <img src="./img/acer.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="https://www.asus.com" target="_blank">
+                <img src="./img/asus.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        let images = document.getElementsByClassName('image-container');
+        let currentSlideIndex = 0;
+        showSlide(0);
+
+        let autoNextSlide = setInterval(() => {
+            nextSlide();
+        }, 2000);
+
+        function pauseChangeSlide() {
+            clearInterval(autoNextSlide);
+        }
+
+        function autoChangeSlide() {
+            autoNextSlide = setInterval(() => {
+            nextSlide();
+            }, 2000);
+        }
+
+        // images.onmouseover = () => {
+        //     console.log('mouseover');
+        // }
+
+        function previousSlide() {
+            showSlide(currentSlideIndex-1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlideIndex+1);
+        }
+
+        /* 
+        Show the slide n
+        n begin from 0
+        */ 
+        function showSlide(n) {
+            let images = document.getElementsByClassName("image-container");
+            currentSlideIndex = n;
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = images.length-1;
+            }
+            if (currentSlideIndex === images.length) {
+                currentSlideIndex = 0;
+            }
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+            images[currentSlideIndex].style.display = 'block';
+        }
+    </script>
+</body>
+</html>
