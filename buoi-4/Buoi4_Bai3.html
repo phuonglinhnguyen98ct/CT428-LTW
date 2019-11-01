@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head> 
+	<title> Lập trình web (CT428) </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+</head>	
+<body>
+<div id="wrap">
+	<div id="title">
+		<h1>Bài 3 - Buổi 4</h1>
+	</div> <!--end div title-->
+	<div id="menu">
+		<!-- chèn menu của sinh viên vào-->
+	</div> <!--end div menu-->
+	<div id="content">
+        <!--Nội dung trang web-->
+        <h1>Quảng cáo</h1>
+        
+        <div class="image-container">
+            <a href="https://www8.hp.com" target="_blank">
+                <img src="./img/hp.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="https://www.dell.com" target="_blank">
+                <img src="./img/dell.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>            
+        </div>
+        <div class="image-container">
+            <a href="https://www.acer.com" target="_blank">
+                <img src="./img/acer.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="https://www.asus.com" target="_blank">
+                <img src="./img/asus.jpg" alt="hp-computer" onmouseover="pauseChangeSlide()" onmouseout="autoChangeSlide()">
+            </a>
+        </div>
+        
+        <p>Yêu cầu:<br/>
+        Có 4 hình ảnh của 4 công ty muốn quảng cáo đính kèm. Đầu tiên hiển thị một hình, cứ 2 giây thì thay hình ảnh khác, xoay vòng giữa 4 hình ảnh đã cho.<br/>
+        Khi người dùng rê chuột lên hình nào thì hình đó dừng lại không thay đổi để người dùng đọc thông tin về quảng cáo đó, 
+        khi nào người dùng rê chuột khỏi thì 2 giây sau mới cho hiển thị hình tiếp theo.<br/>
+        Khi người dùng click vào hình nào thì liên kết đến website của hình đó ở cửa sổ mới.
+        </p>
+	</div> <!--end div content-->
+	<div id="footer">
+		<p>Họ tên SV: Nguyễn Phương Linh<br/> Email: linhb1606998@student.ctu.edu.vn</p>
+	</div> <!--end div footer-->
+</div> <!--end div wrap-->
+
+<script>
+    let images = document.getElementsByClassName('image-container');
+    let currentSlideIndex = 0;
+    showSlide(0);
+
+    let autoNextSlide = setInterval(() => {
+        nextSlide();
+    }, 2000);
+
+    function pauseChangeSlide() {
+        clearInterval(autoNextSlide);
+    }
+
+    function autoChangeSlide() {
+        autoNextSlide = setInterval(() => {
+        nextSlide();
+        }, 2000);
+    }
+
+    function previousSlide() {
+        showSlide(currentSlideIndex-1);
+    }
+
+    function nextSlide() {
+        showSlide(currentSlideIndex+1);
+    }
+
+    /* 
+    Show the slide n
+    n begin from 0
+    */ 
+    function showSlide(n) {
+        let images = document.getElementsByClassName("image-container");
+        currentSlideIndex = n;
+        if (currentSlideIndex < 0) {
+            currentSlideIndex = images.length-1;
+        }
+        if (currentSlideIndex === images.length) {
+            currentSlideIndex = 0;
+        }
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.display = 'none';
+        }
+        images[currentSlideIndex].style.display = 'block';
+    }
+</script>
+</body>
+</html>

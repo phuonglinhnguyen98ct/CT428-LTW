@@ -1,24 +1,15 @@
-﻿<?php
-session_start();
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-} else {
-    header('Location: ' . '../../buoi-3/login.html');
-}
-?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head> 
 	<title> Lập trình web (CT428) </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
 </head>	
 
 <body>
 <div id="wrap">
 	<div id="title">
-		<h1>Bài 4 - Buổi 4</h1>
+		<h1>Bài 2 - Buổi 4</h1>
 	</div> <!--end div title-->
 	<div id="menu">
 		<!-- chèn menu của sinh viên vào-->
@@ -28,25 +19,18 @@ if (isset($_SESSION['username'])) {
 		<h1>Slide show</h1>
 	
 		<form>
-		<?php
-            require './connect-db.php';
-            $sql = 'SELECT * FROM sanpham as sp JOIN thanhvien as tv ON sp.idtv = tv.id WHERE tendangnhap = ?';
-            $stmt = $con->prepare($sql);
-            $stmt->bind_param('s', $username);
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            $productNames = [];
-
-            while($row = $result->fetch_assoc()) {
-                array_push($productNames, $row['tensp']);
-        ?>
-                <div class="image-container">
-                    <img src="../../buoi-3<?php echo substr($row['hinhanhsp'], 2)?>">
-                </div>
-        <?php 
-            }
-        ?>
+			<div class="image-container">
+				<img src="./img/hp.jpg" alt="hp-computer">
+			</div>
+			<div class="image-container">
+				<img src="./img/dell.jpg" alt="hp-computer">
+			</div>
+			<div class="image-container">
+				<img src="./img/acer.jpg" alt="hp-computer">
+			</div>
+			<div class="image-container">
+				<img src="./img/asus.jpg" alt="hp-computer">
+			</div>
 
 			<br/>
 			<input type="button" name="previous" value="Previous" onclick="previousSlide()">
@@ -54,13 +38,10 @@ if (isset($_SESSION['username'])) {
 			<br/>
 
 			<select name="productList" id="product-list">
-            <?php
-                for ($i = 0; $i < count($productNames); $i++) {
-            ?>
-                    <option value="<?php echo $productNames[$i]?>"><?php echo $productNames[$i]?></option>
-            <?php 
-                }
-            ?>
+                <option value="HP">HP</option>
+                <option value="Dell">Dell</option>
+                <option value="Acer">Acer</option>
+                <option value="Asus">Asus</option>
             </select>
 		</form>
 		<p>Yêu cầu:<br/>
