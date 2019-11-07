@@ -7,6 +7,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $sql = 'SELECT * FROM thanhvien WHERE tendangnhap = ?';
+
 $stmt = $con->prepare($sql);
 $stmt->bind_param('s', $username);
 $stmt->execute();

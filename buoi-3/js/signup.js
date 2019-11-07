@@ -28,3 +28,25 @@ signup_form.onsubmit = () => {
         return false;
     }
 }
+
+function isExistedUsername(username) {
+    let xhttp = new XMLHttpRequest();
+
+    let username_alert = document.getElementById('username-alert');
+    let signup_btn = document.getElementById('signup-btn');
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText === 'Tên tài khoản đã tồn tại') {
+                username_alert.innerHTML = this.responseText;
+                signup_btn.disabled = true;
+            }
+            else {
+                username_alert.innerHTML = "";
+                signup_btn.disabled = false;
+            }
+        }
+    };
+
+    xhttp.open("GET", "./php/checkexistedusername.php?username=" + username, true);
+    xhttp.send();
+}

@@ -61,7 +61,7 @@ if (isset($_SESSION['username'])) {
                         <div><input type="number" name="giasp" required value="<?php echo $row['giasp'] ?>">(VND)</div>
                     </div>
                     <div class="grid-col-4-6">
-                        <div>Hình đại diện</div>
+                        <div>Hình ảnh sản phẩm</div>
                         <div><input type="file" name="hinhsp"></div>
                     </div>
                     <div class="sub-btn-container">

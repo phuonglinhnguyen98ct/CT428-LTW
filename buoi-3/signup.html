@@ -16,7 +16,10 @@
         <form action="./php/signup.php" method="POST" id="signup-form" enctype="multipart/form-data">
             <div class="div-column-4-6">
                 <label for="username">Tên đăng nhập</label>
-                <input type="text" name="username" id="username" required>
+                <div>
+                    <input type="text" name="username" id="username" required onblur="isExistedUsername(this.value)">
+                    <div id="username-alert"></div>                
+                </div>
             </div>
             <div class="div-column-4-6">
                 <label for="password">Mật khẩu</label>

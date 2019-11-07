@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])) {
                         <div><input type="number" name="giasp" required> (VND)</div>
                     </div>
                     <div class="grid-col-4-6">
-                        <div>Hình đại diện</div>
+                        <div>Hình ảnh sản phẩm</div>
                         <div><input type="file" name="hinhsp" required></div>
                     </div>
                     <div class="sub-btn-container">

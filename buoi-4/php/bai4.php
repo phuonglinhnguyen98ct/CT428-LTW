@@ -29,7 +29,7 @@ if (isset($_SESSION['username'])) {
 	
 		<form>
 		<?php
-            require './connect-db.php';
+            require '../../buoi-3/php/connect-db.php';
             $sql = 'SELECT * FROM sanpham as sp JOIN thanhvien as tv ON sp.idtv = tv.id WHERE tendangnhap = ?';
             $stmt = $con->prepare($sql);
             $stmt->bind_param('s', $username);

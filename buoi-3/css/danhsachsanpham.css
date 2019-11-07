@@ -85,3 +85,49 @@ a img {
 .logout-btn input:hover {
     cursor: pointer;
 }
+
+.product-search-container {
+    margin: 10px 0;
+}
+
+#show-product-detail {
+    color: blue;
+}
+
+#show-product-detail {
+    cursor: pointer;
+}
+
+.grid-col-4-6 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 15px;
+}
+
+.grid-col-4-6 input {
+    height: 20px;
+    line-height: 20px;
+}
+
+#product-img {
+    height: 100px;
+    transition: transform .5s ease-in-out;
+}
+
+#product-img:hover {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);
+    transform: scale(6);
+    position: relative;
+    z-index: 9999;
+}
+
+#dark-layer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
