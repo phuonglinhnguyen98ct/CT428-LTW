@@ -29,7 +29,7 @@ $i = 1;
 while ($row = $result->fetch_assoc()) {
     echo '<tr>';
     echo '<td>' . $i . '</td>';
-    echo '<td>' . $row['tensp'] . '</td>';
+    echo '<td><div class="product-name">' . $row['tensp'] . '<img src="' . $row['hinhanhsp'] . '" alt="product-image" class="product-img"></div></td>';
     echo '<td>' . $row['giasp'] . ' (VND)</td>';
     echo '<td><p id="show-product-detail" onclick="showProductDetail(' . $row['idsp'] . ')">Xem chi tiết</p></td>';
     echo '<td><a href="suasanpham.php?idsp=' . $row['idsp'] . '"><img src="../img/icon/edit.png" alt="icon-edit"></a></td>';

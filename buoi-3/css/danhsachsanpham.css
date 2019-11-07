@@ -30,6 +30,10 @@ a:visited {
     color: blue;
 }
 
+a:hover {
+    color: #008ecc;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -94,8 +98,9 @@ a img {
     color: blue;
 }
 
-#show-product-detail {
+#show-product-detail:hover {
     cursor: pointer;
+    color: #008ecc;
 }
 
 .grid-col-4-6 {
@@ -109,25 +114,32 @@ a img {
     line-height: 20px;
 }
 
-#product-img {
+.grid-col-4-6 img {
     height: 100px;
-    transition: transform .5s ease-in-out;
 }
 
-#product-img:hover {
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);
-    transform: scale(6);
+.product-name {
+    color: blue;
     position: relative;
-    z-index: 9999;
 }
 
-#dark-layer {
+.product-name:hover {
+    cursor: pointer;
+    color: #008ecc;
+}
+
+.product-img {
+    height: 50px;
     display: none;
-    width: 100%;
-    height: 100%;
-    background-color: grey;
-    opacity: 0.5;
-    position: fixed;
+    border-radius: 5px;
+}
+
+.product-name:hover .product-img {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.4);
+    display: block;
+    position: absolute;
+    height: 250px;
+    z-index: 9999;
     top: 0;
-    z-index: 99;
+    left: 100px;
 }

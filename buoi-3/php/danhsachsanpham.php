@@ -56,7 +56,7 @@ if (isset($_SESSION['username'])) {
                             ?>
                             <tr>
                                 <td><?php echo $i ?></td>
-                                <td><?php echo $row['tensp'] ?></td>
+                                <td><div class="product-name"><?php echo $row['tensp'] ?> <img src="<?php echo $row['hinhanhsp'] ?>" alt="product-image" class="product-img"></div></td>
                                 <td><?php echo $row['giasp'] ?> (VND)</td>
                                 <td><p id="show-product-detail" onclick="showProductDetail(<?php echo $row['idsp'] ?>)">Xem chi tiết</p></td>
                                 <td><a href="suasanpham.php?idsp=<?php echo $row['idsp'] ?>"><img src="../img/icon/edit.png" alt="icon-edit"></a></td>
@@ -97,14 +97,6 @@ if (isset($_SESSION['username'])) {
 
             xhttp.open("GET", "./searchproduct.php?productName=" + productName, true);
             xhttp.send();
-        }
-
-        function popUpImg() {
-            document.getElementById('dark-layer').style.display = 'block';
-        }
-
-        function normalImg() {
-            document.getElementById('dark-layer').style.display = 'none';
         }
 
         function showProductDetail(idsp) {

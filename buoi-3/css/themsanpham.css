@@ -12,6 +12,10 @@ a:visited {
     color: blue;
 }
 
+a:hover {
+    color: #008ecc;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;

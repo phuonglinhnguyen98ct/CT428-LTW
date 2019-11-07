@@ -30,5 +30,5 @@ echo '</div>';
 
 echo '<div class="grid-col-4-6">';
     echo '<div>Hình ảnh sản phẩm</div>';
-    echo '<div><img src="' . $row['hinhanhsp'] . '" alt="hinhsp" id="product-img" onmouseover="popUpImg()" onmouseout="normalImg()"></div>';
+    echo '<div><img src="' . $row['hinhanhsp'] . '" alt="hinhsp"></div>';
 echo '</div>';
