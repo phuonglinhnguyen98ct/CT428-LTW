@@ -16,21 +16,15 @@
                 <h3>Đăng nhập</h3>
             </div>
             <form action="./php/login.php" method="POST">
-                <div class="usrn-passw">
-                    <div>Tên đăng nhập:</div>
-                    <div>
-                        <input type="text" name="username" required autofocus>
-                    </div>
-                </div>
-                <div class="usrn-passw">
-                    <div>Mật khẩu:</div>
-                    <div>
-                        <input type="password" name="password" required>
-                    </div>
+                <div class="usrn-passw-container">
+                    <input type="text" name="username" placeholder="Tên tài khoản" class="usrn-passw" required autofocus>
+                    <input type="password" name="password" placeholder="Mật khẩu" class="usrn-passw" required>
                 </div>
                 <div class="login-btn-container">
-                    <a href="./signup.html"><input type="button" value="Đăng ký"></a>
-                    <input type="submit" value="Đăng nhập">
+                    <input type="submit" value="Đăng nhập" id="login-btn">
+                </div>
+                <div class="signup-container">
+                    <a href="./signup.html">Bạn chưa có tài khoản?</a>
                 </div>
             </form>
         </div>

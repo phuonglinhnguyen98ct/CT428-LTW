@@ -2,13 +2,27 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 h3 {
-    color: red;
+    color: #010038;
     display: block;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #00909e;
+}
+
+a:hover {
+    color: #194c9e;
 }
 
 .wrapper {
@@ -16,30 +30,65 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #e6f8f9;
 }
 
 .container {
     width: fit-content;
-    border: solid 1px gray;
-    background-color: #e4e4ec;
+    border: solid 1px #b1e8ed;
+    background-color: #c9d1d3;
     padding: 50px 100px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.usrn-passw-container {
+    width: 300px;
 }
 
 .usrn-passw {
-    padding: 10px 0;
+    height: 40px;
+    width: 250px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    outline: none;
+    border: solid 2px #3691ce;
+    display: block;
+    transition: width 0.2s ease-in-out;
+    color: #00909e;
 }
 
-.usrn-passw input {
-    height: 20px;
-    width: 100%;
+.usrn-passw:focus {
+    width: 300px;
+    border: solid 2px #205b83;
+    background-color: #D8F3FF;
 }
 
-.login-btn-container {
+.signup-container a {
+    margin: auto;
+    display: block;
     width: fit-content;
-    margin: 0 auto;
 }
 
-.login-btn-container input {
-    padding: 10px;
-    margin: 10px;
+#login-btn {
+    padding:12px 30px;
+    border: solid 2px #6ee06a;
+    margin: 20px auto;
+    border-radius: 30px;
+    display: block;
+    font-size: 18px;
+    outline: none;
+    width: 180px;
+    color: #41be10;
+    font-weight: bold;
+    transition: background-color 0.2s ease-out;    
+    transition: width 0.2s ease-out;    
+}
+
+#login-btn:hover {
+    background-color: #6ee06a;
+    border: solid 2px #20811c;
+    color: #20811c;
+    cursor: pointer;
+    width: 200px;
 }
